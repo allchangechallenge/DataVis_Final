@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="initial-scale=0.33">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Staatliches&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="page4.css">
+        <title>Pokemon Project</title>
+        
+    </head>
+    <body style="background-color:rgb(104, 96, 81);">
+        <style>   
+            .d3-tip {
+              line-height: 1;
+              padding: 20px;
+              background: rgba(0, 0, 0, 0.8);
+              color: #fff;
+              border-radius: 30px;
+              font-size: 20px;
+            }
+            .selected {
+                fill: rgb(231, 137, 153);
+                stroke: rgb(235, 75, 102);
+            }
+
+            .page {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;     
+            }
+            body {
+                margin: 0 auto;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column ;
+                align-items: center;
+                text-align: center;
+                overflow: hidden;
+            }
+
+
+        </style>
+
+        <p  id="title" style=" margin: 0 auto;color:white;font-size: 1200%;  font-family: 'staatliches';">Pokemon Handbook</p>
+        <svg id="first" width="50%" height="50%" viewBox="0 0 1500 1500" ></svg>
+        <svg  id="main"  width="50%" height="50%" viewBox="0 0 2500 2500" ></svg>
+        <svg  id="page2" width="50%" height="50%" viewBox="0 0 1500 1500"></svg>
+        <svg  id="page3" width="50%" height="50%" viewBox="0 0 2000 2500"></svg>
+          
+
+        <div id="page4"style="viewport:0 0 5000 5000;;margin: 0 auto;">
+            <div>
+                <div id="top_left" >
+                    <p style="padding-left: 40px;font-size: 350%;color:white;">各世代體型</p>
+                    <svg id="top_svg"></svg>
+                </div>
+                <div id="select_gen">
+                    <span class="gen_list" id="gen1_li">Generation 1</span>
+                    <span class="gen_list" id="gen2_li">Generation 2</span>
+                    <span class="gen_list" id="gen3_li">Generation 3</span>
+                    <span class="gen_list" id="gen4_li">Generation 4</span>
+                    <span class="gen_list" id="gen5_li">Generation 5</span>
+                    <span class="gen_list" id="gen6_li">Generation 6</span>
+                    <span class="gen_list" id="all_li">All</span>
+                
+                </div>
+            </div>
+    
+            <div id="down_left">
+                <p style="font-size: 350%; color:white;">各世代戰力</p>
+                <div id="density">
+                    <div id="den_list">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            //用於禁止縮放
+            //取自https://blog.csdn.net/weixin_42514162/article/details/111877931
+            const keyCodeMap = {
+              // 91: true, // command
+              61: true,
+              107: true, // 数字键盘 +
+              109: true, // 数字键盘 -
+              173: true, // 火狐 - 号
+              187: true, // +
+              189: true, // -
+            };
+            // 覆盖ctrl||command + ‘+’/‘-’
+            document.onkeydown = function (event) {
+              const e = event || window.event;
+              const ctrlKey = e.ctrlKey || e.metaKey;
+              if (ctrlKey && keyCodeMap[e.keyCode]) {
+                e.preventDefault();
+              } else if (e.detail) { // Firefox
+                event.returnValue = false;
+              }
+            };
+            // 覆盖鼠标滑动
+            document.body.addEventListener('wheel', (e) => {
+              if (e.ctrlKey) {
+                if (e.deltaY < 0) {
+                  e.preventDefault();
+                  return false;
+                }
+                if (e.deltaY > 0) {
+                  e.preventDefault();
+                  return false;
+                }
+              }
+            }, { passive: false });
+        </script>
+
+
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="d3-tip.js"></script>
+        <script src="main.js"></script>
+        <script src="main4.js"></script>
+        <script src="https://d3js.org/d3-array.v2.min.js"></script>
+       
+    </body>
+</html>

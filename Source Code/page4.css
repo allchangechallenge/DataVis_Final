@@ -1,0 +1,54 @@
+#page4 {
+    /* width: 2500px ;
+    height: 2500px; */
+    font-family: 'Noto Sans TC';
+    margin-left: 208px;
+    color: white;
+}
+
+#top_left {
+    width: 2500px ; 
+    height: 780px ; 
+    /* background-color: gainsboro ;  */
+    /* border: 2px dashed ; */
+    float: left ;
+}
+
+#select_gen {
+    margin-right: 50px ;
+    /* border: 2px dashed ; */
+    padding-top: 300px ;
+    padding-left: 20px;
+    font-size: 250%;
+    float: left;
+}
+
+#top_svg {
+    width: 2500px;
+    height: 100%;
+    padding-left: 20px ;
+}
+
+#g1 {
+    /* border: solid aqua; */
+}
+
+.gen_list {
+    display: block ;
+    padding-top: 5px;
+    font-family: 'staatliches';
+}
+
+#down_left {
+    padding-right: 238px;   
+    margin-top: 817px;
+    width: 2500px;
+    height: 1000px;
+    /* border: solid aqua; */
+}
+
+#den_svg {
+    stroke-width: 2px;
+}
+
+
